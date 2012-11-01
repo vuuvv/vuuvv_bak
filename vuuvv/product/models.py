@@ -135,3 +135,7 @@ class File(models.Model):
     content_id = moddels.PositiveIntegerField(_('Content id'), blank=True, null=True)
     content = generic.GenericForeignKey(ct_field='content_type', fk_field='content_id')
 
+    name = models.CharField(_('Name'), blank=True, max_length=100)
+    ordering = models.IntegerField(_('Sort Order'), default=999)
+
+
