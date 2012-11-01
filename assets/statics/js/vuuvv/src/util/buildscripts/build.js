@@ -1,4 +1,5 @@
 //Main build script for Dojo
+debugger;
 var buildTimerStart = (new Date()).getTime();
 buildScriptsPath = typeof buildScriptsPath == "undefined" ? "./" : buildScriptsPath;
 load(buildScriptsPath + "jslib/logger.js");

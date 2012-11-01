@@ -49,3 +49,13 @@ a:active {
 .shortcuts .first {
 	background: none;
 }
+
+.shortcuts .left {
+	width: 29%;
+	text-align: left;
+}
+
+.shortcuts .right {
+	width: 70%;
+	text-align: right;
+}
