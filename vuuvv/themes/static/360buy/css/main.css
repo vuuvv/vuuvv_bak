@@ -51,11 +51,11 @@ a:active {
 }
 
 .shortcuts .left {
-	width: 29%;
+	float: left;
 	text-align: left;
 }
 
 .shortcuts .right {
-	width: 70%;
+	float: right;
 	text-align: right;
 }

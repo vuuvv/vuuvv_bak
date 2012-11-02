@@ -59,8 +59,8 @@ img {
 	letter-spacing: -4px;
 }
 
-/* horizontal list item */
-.hi {
+/* inline-block (horizontal list item) */
+.ib {
 	letter-spacing: 0;
 	display: inline-block;
 	*display: inline;
