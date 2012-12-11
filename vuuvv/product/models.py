@@ -138,4 +138,3 @@ class File(models.Model):
     name = models.CharField(_('Name'), blank=True, max_length=100)
     ordering = models.IntegerField(_('Sort Order'), default=999)
 
-
