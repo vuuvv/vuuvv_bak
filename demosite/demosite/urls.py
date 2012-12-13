@@ -4,10 +4,12 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
+from vuuvv.dashboard.views import Login
+
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'vuuvv.themes.views.home', name='home'),
-    url(r'^test/$', 'vuuvv.themes.views.test', name='test'),
+    url(r'^login/$', Login.as_view(), name='login'),
     # url(r'^demosite/', include('demosite.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
