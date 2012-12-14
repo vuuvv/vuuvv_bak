@@ -1,0 +1,459 @@
+html {
+	background: #f9f9f9;
+	color: #000;
+	overflow-y: scroll;
+}
+
+body, button, input, select, textarea {
+	background: #fff;
+	color: #666;
+	font:12px/1.5 "Lucida Grande", Helvetica, Arial, Verdana, \5FAE\8F6F\96C5\9ED1, sans-serif;
+}
+
+/* 清除内外边距 */
+body, div,
+dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, code,
+form, fieldset, legend, input, textarea, button,
+p, blockquote,
+th, td {
+	margin: 0;
+	padding: 0;
+}
+
+/* 重置表格元素 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 重置边框元素 */
+fieldset,
+img {
+	border: 0;
+}
+
+/* 重置列表元素 */
+li {
+	list-style: none;
+}
+
+/* 重置文本格式元素 */
+caption,
+th {
+	text-align:left;
+}
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+h1, h2, h3, h4, h5, h6, strong{
+	font-weight: bold;
+}
+address, cite, dfn, em, var { font-style: normal; }
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; }
+small { font-size: 12px; }
+
+q:before,
+q:after { content:''; }
+
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+
+/* 重置表单元素 */
+input, textarea, select { *font-size:100%; }
+legend { color:#000; }
+input[type="checkbox"]{vertical-align: middle;}
+input[type="radio"]{vertical-align: middle;}
+
+/*float*/
+.fl{ float:left!important;}
+.fr{ float:right!important;}
+.fn{ float:none!important;}
+
+/*text*/
+.tal{ text-align:left!important;}
+.tar{ text-align:right!important;}
+.tac{ text-align:center!important;}
+.vat{ vertical-align:top!important;}
+.vam{ vertical-align:middle!important;}
+.ti2em{ text-indent:2em!important;}
+.tlf{table-layout:fixed!important;}
+.nowrap{ white-space:nowrap!important;; word-break:normal!important;}
+
+/*margin*/
+.m0{ margin:0!important;}
+.m5{ margin:5px!important;}
+.m10{ margin:10px!important;}
+.m15{ margin:15px!important;}
+.m20{ margin:20px!important;}
+.m25{ margin:25px!important;}
+.mt0{ margin-top:0px!important;}
+.mt5{ margin-top:5px!important;}
+.mt10{ margin-top:10px!important;}
+.mt15{ margin-top:15px!important;}
+.mt20{ margin-top:20px!important;}
+.mt25{ margin-top:25px!important;}
+.ml0{ margin-left:0px!important;}
+.ml5{ margin-left:5px!important;}
+.ml10{ margin-left:10px!important;}
+.ml15{ margin-left:15px!important;}
+.ml20{ margin-left:20px!important;}
+.ml25{ margin-left:25px!important;}
+.mb0{ margin-bottom:0px!important;}
+.mb5{ margin-bottom:5px!important;}
+.mb10{ margin-bottom:10px!important;}
+.mb15{ margin-bottom:15px!important;}
+.mb20{ margin-bottom:20px!important;}
+.mb25{ margin-bottom:25px!important;}
+.mr0{ margin-right:0px!important;}
+.mr5{ margin-right:5px!important;}
+.mr10{ margin-right:10px!important;}
+.mr15{ margin-right:15px!important;}
+.mr20{ margin-right:20px!important;}
+.mr25{ margin-right:25px!important;}
+
+/*padding调节(格式p[t,r,b,l][number])*/
+.p0{ padding:0px!important;}
+.p5{ padding:5px!important;}
+.p10{ padding:10px!important;}
+.p15{ padding:15px!important;}
+.p20{ padding:20px!important;}
+.p25{ padding:25px!important;}
+.pt0{ padding-top:0px!important;}
+.pt5{ padding-top:5px!important;}
+.pt10{ padding-top:10px!important;}
+.pt15{ padding-top:15px!important;}
+.pt20{ padding-top:20px!important;}
+.pt25{ padding-top:25px!important;}
+.pl0{ padding-left:0px!important;}
+.pl5{ padding-left:5px!important;}
+.pl10{ padding-left:10px!important;}
+.pl15{ padding-left:15px!important;}
+.pl20{ padding-left:20px!important;}
+.pl25{ padding-left:25px!important;}
+.pb0{ padding-bottom:0px!important;}
+.pb5{ padding-bottom:5px!important;}
+.pb10{ padding-bottom:10px!important;}
+.pb15{ padding-bottom:15px!important;}
+.pb20{ padding-bottom:20px!important;}
+.pb25{ padding-bottom:25px!important;}
+.pr0{ padding-right:0px!important;}
+.pr5{ padding-right:5px!important;}
+.pr10{ padding-right:10px!important;}
+.pr15{ padding-right:15px!important;}
+.pr20{ padding-right:20px!important;}
+.pr25{ padding-right:25px!important;}
+
+/*colors*/
+.orange{ color: #F60!important;}
+.gray{ color: #999!important;}
+.darkgray{ color:#666!important}
+.red{ color:#F00!important;}
+.blue{ color:#06C!important;}
+.green{ color:#390!important;}
+.black{ color:#000;}
+
+a {
+	color: #0066cc;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.login-body {
+	margin:0 auto; width:940px; text-align:left;
+}
+
+.page-login .logo {
+	display:block;
+	float:left;
+	background:url(https://static.aliyun.com/images/www-summerwind/logo.gif) no-repeat scroll left center transparent;
+	height:60px;
+	margin:0;
+	width:325px;
+	cursor:pointer;
+}
+
+.page-login .main {
+	clear:both;
+	padding:0 0 15px 0;
+	overflow:hidden;
+	*zoom:1;
+}
+
+.page-login .main .banner {
+	float: left;
+}
+
+.page-login .main .banner img {
+	display: block;
+	width: 520px;
+	height 420px;
+}
+
+.page-login .main .login-panel {
+	position: relative;
+	float: right;
+	margin-right: 20px;
+	padding-top: 270px;
+	background: url(img/login_panel_sprite.png) 0 0 no-repeat;
+}
+
+.page-login .main .login-panel-novcode {
+	padding-top: 200px;
+	margin-top: 20px;
+}
+
+.page-login .main .login-panel .inner {
+	height:148px;
+	width:360px;
+	padding:15px;
+	background:url(img/login_panel_sprite.png) 0 -240px no-repeat;
+}
+
+.page-login .main .login-panel .inner .panel-body {
+	position:absolute;
+	left:15px;
+	top:15px;
+	width:360px;
+}
+
+.page-login .main .login-panel .header {
+	height:40px;
+}
+
+.page-login .main .login-panel .body{
+	padding: 20px 5px 10px 5px;
+	height: 244px;
+}
+
+.page-login .main .login-panel-novcode .body {
+	height:174px;
+}
+
+.page-login .main .login-panel-novcode .row-vcode {
+	display:none;
+}
+
+.page-login .main .login-panel .body .row { 
+	padding:2px 0;
+	clear:both;
+	*zoom:1;
+}
+
+.page-login .main .login-panel .body .row:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+
+.page-login .main .login-panel .body .caption {
+	float:left;
+	width:60px;
+	text-align:right;
+	font-size:14px;
+	margin-right:15px;
+	padding-top:11px;
+}
+
+.page-login .main .login-panel .body .content {
+	float:left;
+}
+
+.page-login .main .login-panel .body .content .textbox {
+	padding:4px;
+	border-radius:5px;
+	float:left;
+	position:relative;
+}
+
+.page-login .main .login-panel .body .content .textbox input {
+	border:1px solid #CCC;
+	border-radius:3px;
+	padding:7px 9px;
+	width:230px;
+	height:18px;
+	font-size:14px;
+	display:block;
+	float:left;
+	outline:none;
+}
+
+.page-login .main .login-panel .body .content .textbox-tip input {
+	color:#CCC;
+}
+
+.page-login .main .login-panel .body .buttons .bubble,
+.page-login .main .login-panel .body .content .textbox .bubble {
+	display:none;
+	position:absolute;
+	left:20px;
+	top:-28px;
+	border:1px solid #FACC80;
+	background:#FFFDF1;
+	padding:4px 10px;
+	border-radius:3px;
+	color:#F00;
+	font-weight:bold;
+	*zoom:1;
+}
+
+.page-login .main .login-panel .body .buttons .bubble .arrow,
+.page-login .main .login-panel .body .content .textbox .bubble .arrow {
+	display:block;
+	position:absolute;
+	bottom:-9px;
+	left:20px;
+	width:16px;
+	height:9px;
+	background:url(img/login_panel_sprite.png) -317px -515px no-repeat;
+	overflow:hidden;
+	font-size:0;
+}
+
+.page-login .main .login-panel .body .content .textbox-focus {
+	background:#D7E6F6;
+}
+
+.page-login .main .login-panel .body .content .textbox-focus input {
+	border-color:#80A7D3;
+}
+
+.page-login .main .login-panel .body .content .textbox-error {
+	background:#FDEDD3;
+}
+
+.page-login .main .login-panel .body .content .textbox-error input {
+	border-color:#DCBA83;
+}
+
+.page-login .main .login-panel .body .buttons-error .bubble,
+.page-login .main .login-panel .body .content .textbox-error .bubble {
+	display:block;
+	*zoom:1;
+}
+
+.page-login .main .login-panel .body .content .texttip {
+	display:block;
+	clear:both;
+	padding-left:5px;
+}
+
+.page-login .main .login-panel .body  a.vcodepic {
+	display:block;
+	float:left;
+	padding:4px 0 0 0;
+}
+
+.page-login .main .login-panel .body  a.vcodepic img {
+	width:100px;
+	height:30px;
+	border:1px solid #EEE;
+	padding:1px 0 1px 1px;
+	border-radius:3px;
+}
+
+.page-login .main .login-panel .body  a.vcodepic:hover {
+	filter:alpha(opacity=70);
+	opacity:0.7
+}
+
+.page-login .main .login-panel .body .buttons {
+	position:relative;
+	padding:10px 10px 10px 80px;
+}
+
+.page-login .main .login-panel .body .buttons a {
+	vertical-align:middle;
+}
+
+.page-login .main .login-panel .body .buttons .bubble {
+	left:105px;
+}
+
+.page-login .main .login-panel .body .buttons .checkbox {
+	width:14px;
+	height:14px;
+	vertical-align:middle;
+	margin-right:5px;
+}
+
+.page-login .main .login-panel .body .buttons .checkbox label {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	vertical-align:middle;
+}
+
+.page-login .main .login-panel .body .login-btn {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	width:103px;
+	height:35px;
+	background:url(img/login_panel_sprite.png) 0 -495px no-repeat;
+	overflow:hidden;
+	margin-right:10px;
+}
+
+.page-login .main .login-panel .body .login-btn:hover {
+	filter:alpha(opacity=80);
+	opacity:0.8;
+}
+
+.page-login .main .login-panel .body .loginbtn-logging,
+.page-login .main .login-panel .body .loginbtn-logging:hover {
+	background-position:-120px -495px;
+	opacity:1;
+	filter:alpha(opacity=100);
+	cursor:default;
+}
+
+.page-login .main .login-panel .body .vcodepic {
+	vertical-align:middle;
+}
+
+.page-login .main .login-panel .footer {
+	text-align:center;
+}
+
+.page-login .main .login-panel .footer {
+	margin:0 1px;
+	height:100px;
+	background:url(img/login_panel_bottom_bg.gif) 0 0 repeat-x;
+	border-top:1px solid #E7E7E7
+}
+
+.page-login .main .login-panel .footer .register {
+	display:block;
+	margin:15px auto 5px auto;
+	width:323px;
+	height:50px;
+	background:url(img/login_panel_sprite.png) 0 -430px no-repeat;
+	text-indent:-9999px;
+	overflow:hidden;
+}
+
+.page-login .main .login-panel .footer .register:hover {
+	filter:alpha(opacity=70);
+	opacity:0.7
+}
+
+.login-footer {
+	clear:both;
+	font:12px/18px "\5FAE\8F6F\96C5\9ED1", Helvetica, Arial, Verdana, "\5B8B\4F53";
+	color:#666;
+	border-top:5px solid #D8D8D8;
+	text-align:center;
+	margin-top:20px;
+	padding:15px 0 32px 0;
+	background:#EFEFEF;
+	*zoom:1;
+}
+
