@@ -317,6 +317,10 @@ a:hover {
 	font-size:0;
 }
 
+.page-login .main .login-panel .body .content .textbox input.vcode {
+	width:123px;
+}
+
 .page-login .main .login-panel .body .content .textbox-focus {
 	background:#D7E6F6;
 }
