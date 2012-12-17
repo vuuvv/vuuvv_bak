@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'vuuvv.themes.views.home', name='home'),
     url(r'^login/$', Login.as_view(), name='login'),
+    url(r'^dashboard/', include('vuuvv.dashboard.urls')),
     # url(r'^demosite/', include('demosite.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

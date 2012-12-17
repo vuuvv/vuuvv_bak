@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="{% static "js/lib/dijit/themes/claro/claro.css" %}"/>
+	<link rel="stylesheet" href="{% static "js/vuuvv/src/dashboard/themes/css/dashboard.css" %}"/>
+	<script type="text/javascript">
+		var dojoConfig = {
+			baseUrl: "/static/js/",
+			async: true,
+			tlmSiblingOfDojo: false,
+			packages: [
+				{name: "dojo", location: "lib/dojo"},
+				{name: "dijit", location: "lib/dijit"},
+				{name: "dojox", location: "lib/dojox"},
+				{name: "dashboard", location: "vuuvv/src/dashboard"}
+			]
+		};
+	</script>
+	<script src="{% static "js/lib/dojo/dojo.js" %}" type="text/javascript"></script>
+	<script type="text/javascript">
+		require([
+				"dijit/MenuBar",
+				"dojo/parser",
+				"dijit/PopupMenuBarItem",
+				"dijit/Menu",
+				"dijit/MenuItem",
+				"dojo/dnd/Moveable",
+				"dojo/domReady!"
+		], function(MenuBar, parser) {
+				_ActivateOnMouseoverMixin = dojo.declare(null, {
+					onItemHover: function(item) {
+						if (!this.isActive) {
+							this._markActive();
+						}
+						this.inherited(arguments);
+					}
+				});
+
+				ActiveMenuBar = dojo.declare([MenuBar, _ActivateOnMouseoverMixin], {});
+				parser.parse();
+		});
+	</script>
+</head>
+<body class="claro">
+	<div data-dojo-type="dojo.dnd.Moveable" style="width:100px;height:100px;background:red;" ></div>
+	<div data-dojo-type="ActiveMenuBar" data-dojo-props="popupDelay:100">
+		<div data-dojo-type="dijit.PopupMenuBarItem">
+			<span>1</span>
+			<div data-dojo-type="dijit.Menu">
+				<div data-dojo-type="dijit.MenuItem">123</div>
+				<div data-dojo-type="dijit.MenuItem"><a href="#456">456</a></div>
+			</div>
+		</div>
+		<div data-dojo-type="dijit.PopupMenuBarItem">
+			<span>A</span>
+			<div data-dojo-type="dijit.Menu">
+				<div data-dojo-type="dijit.MenuItem">ABC</div>
+				<div data-dojo-type="dijit.MenuItem">DEF</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
