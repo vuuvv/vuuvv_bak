@@ -58,7 +58,7 @@ qx.Class.define("vuuvv.Application",
       */
 
       // Create a button
-      var button1 = new qx.ui.form.Button("First Button", "vuuvv/test.png");
+      var button1 = new qx.ui.form.Button("First Butto", "vuuvv/test.png");
 
       // Document is the application root
       var doc = this.getRoot();

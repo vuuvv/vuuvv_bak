@@ -5,9 +5,7 @@ define([
     "dojo/text!./templates/MenuBar.html"
 ], function(declare, _WidgetBase, _TemplateMixin, template) {
 
-return declare("vuuvv.MenuBar",
-    [_WidgetBase, _TemplateMixin],
-{
+return declare([_WidgetBase, _TemplateMixin], {
     templateString: template
 });
 
