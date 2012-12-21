@@ -24,6 +24,10 @@ manager.add_command("runserver", Server(
     host = '0.0.0.0')
 )
 
+def register_blueprints(app):
+    from vuuvv.admin.account import account
+    app.register_blueprint(account)
+
 @manager.option('-t', '--host', dest='host', default='0.0.0.0')
 @manager.option('-p', '--port', dest='port', type=int, default=5000)
 @manager.option('--threaded', dest='threaded', action='store_true', default=False)
@@ -37,6 +41,8 @@ def startserver(mode, host, port, threaded, processes, passthrough_errors):
     if mode == 'dev':
         use_debugger = True
         use_reloader = True
+
+    register_blueprints(app)
 
     app.run(host=host,
             port=port,

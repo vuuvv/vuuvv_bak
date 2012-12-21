@@ -1,0 +1,61 @@
+body {
+	font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+	color: #333;
+	background: #fff;
+}
+
+a:link,a:visited {
+	color:#333;
+	text-decoration:none;
+}
+a:hover {
+	color:#C00;
+	text-decoration:underline;
+}
+a:active {
+	color:#900;
+}
+
+.w {
+	width: 1210px;
+	margin: 0 auto;
+}
+
+.shortcuts {
+	background: url(img/nav.png) no-repeat;
+}
+
+.shortcuts {
+	background-repeat: repeat-x;
+	height: 30px;
+	padding-bottom: 1px;
+}
+
+.shortcuts .w {
+	height: 30px;
+	line-height: 30px;
+}
+
+.shortcuts li {
+	background: url(img/btn.png) no-repeat;
+}
+
+.shortcuts li {
+	background-position: -230px -320px;
+	height: 27px;
+	padding: 0 9px;
+}
+
+.shortcuts .first {
+	background: none;
+}
+
+.shortcuts .left {
+	float: left;
+	text-align: left;
+}
+
+.shortcuts .right {
+	float: right;
+	text-align: right;
+}

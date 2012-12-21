@@ -13,7 +13,7 @@ class Permission(db.EmbeddedDocument):
 
 class Role(db.Document):
     name = db.StringField(max_length=255, required=True)
-    permissions = db.ListField(db.EmbeddedDocumentField('Permission'))
+    permissions = db.ListField(db.EmbeddedDocumentField(Permission))
     created_at = db.DateTimeField(default=datetime.datetime.now, required=True)
 
 class User(db.Document):
@@ -21,6 +21,6 @@ class User(db.Document):
     password = db.StringField(max_length=255, required=True)
     email = db.StringField(max_length=255, required=True)
     permissions = db.ListField(db.EmbeddedDocumentField(Permission))
-    roles = db.ListField(db.ReferenceField(Role))
+    roles = db.ListField(db.ReferenceField(Role, dbref=True))
     created_at = db.DateTimeField(default=datetime.datetime.now, required=True)
 
