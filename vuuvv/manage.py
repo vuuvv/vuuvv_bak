@@ -5,6 +5,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../l
 from flask.ext.script import Manager, Server, Command, Option
 from vuuvv import app, db
 from vuuvv.config import Development, Production, Testing
+from vuuvv.dashboard import Dashboard
 
 manager = Manager(app)
 
@@ -72,8 +73,12 @@ def startserver(mode, host, port, threaded, processes, passthrough_errors):
         use_debugger = True
         use_reloader = True
 
-    register_blueprints(app)
-    import pdb;pdb.set_trace()
+    #register_blueprints(app)
+    dashboard = Dashboard()
+
+    rules = sorted(app.url_map.iter_rules(), key=lambda rule: getattr(rule, "rule"))
+    for rule in rules:
+        print "%-30s" % rule, rule.endpoint
 
     app.run(host=host,
             port=port,
