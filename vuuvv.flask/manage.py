@@ -1,7 +1,8 @@
 import os, sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../libs/')))
 
-from flask.ext.script import Manager, Server
+from flask.ext.script import Manager, Server, Command, Option
 from vuuvv import app, db
 from vuuvv.config import Development, Production, Testing
 
@@ -24,6 +25,35 @@ manager.add_command("runserver", Server(
     host = '0.0.0.0')
 )
 
+class ShowUrls(Command):
+    """
+    Displays all of the url matching routes for the project.
+    """
+    def __init__(self, order='rule'):
+        self.order = order
+
+    def get_options(self):
+        options = super(ShowUrls, self).get_options()
+        options += Option('--order',
+                          dest='order',
+                          default=self.order,
+                          help='Property on Rule to order by (default: %s)' % self.order,
+                          ),
+
+        return options
+
+    def run(self, order):
+        from flask import current_app
+
+        print "%-30s" % 'Rule', 'Endpoint'
+        print '-' * 80
+
+        rules = sorted(current_app.url_map.iter_rules(), key=lambda rule: getattr(rule, order))
+        for rule in rules:
+            print "%-30s" % rule, rule.endpoint
+
+manager.add_command("show_urls", ShowUrls())
+
 def register_blueprints(app):
     from vuuvv.admin.account import account
     app.register_blueprint(account)
@@ -43,6 +73,7 @@ def startserver(mode, host, port, threaded, processes, passthrough_errors):
         use_reloader = True
 
     register_blueprints(app)
+    import pdb;pdb.set_trace()
 
     app.run(host=host,
             port=port,

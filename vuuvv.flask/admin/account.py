@@ -1,11 +1,12 @@
-from flask import Blueprint, request, redirect, render_template, url_for
+from flask import request, redirect, render_template, url_for
 from flask.views import MethodView
 
 from flask.ext.mongoengine.wtf import model_form
 
 from vuuvv.account.models import User, Role, Permission
+from vuuvv.utils import Blueprint
 
-account = Blueprint('account', __name__, template_folder='templates')
+account = Blueprint('account', __name__, url_prefix="/admin", template_folder='templates')
 
 class UserList(MethodView):
     cls = User
@@ -14,6 +15,8 @@ class UserList(MethodView):
         users = self.cls.objects.all()
         return render_template('admin/list.html', posts=posts)
 
+@account.route('/role/<id>/', endpoint='edit')
+@account.route('/role/create/', endpoint='create', defaults={'id': None})
 class RoleDetail(MethodView):
 
     def get_context(self, id=None):
@@ -51,5 +54,3 @@ class RoleDetail(MethodView):
             return redirect(url_for('admin.create'))
         return render_template('admin/detail.html', **context)
 
-account.add_url_rule('/role/<id>/', view_func=RoleDetail.as_view('edit'))
-account.add_url_rule('/role/create/', defaults={'id': None}, view_func=RoleDetail.as_view('create'))
